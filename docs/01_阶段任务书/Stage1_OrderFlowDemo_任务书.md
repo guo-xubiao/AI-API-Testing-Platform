@@ -1,4 +1,4 @@
-﻿# Stage 1：OrderFlow Demo 被测业务系统任务书
+# Stage 1：OrderFlow Demo 被测业务系统任务书
 
 ## 阶段目标
 
@@ -24,7 +24,7 @@
 
 ## 当前任务
 
-当前任务为 Stage 1 - Task 3：设计订单系统领域模型。
+当前任务为 Stage 1 - Task 5：实现用户注册与登录模块。
 
 ## Stage 1 - Task 1：创建 Spring Boot 项目骨架
 

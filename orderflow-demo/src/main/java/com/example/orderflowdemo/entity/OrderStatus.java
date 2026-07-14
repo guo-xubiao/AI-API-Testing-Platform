@@ -1,5 +1,6 @@
 package com.example.orderflowdemo.entity;
 
+
 public enum OrderStatus {
 
     /**
@@ -23,7 +24,7 @@ public enum OrderStatus {
     SHIPPED(3, "已发货"),
 
     /**
-     * 已完成
+     * 已完成-
      */
     COMPLETED(4, "已完成"),
 

@@ -1,70 +1,43 @@
 package com.example.orderflowdemo.entity;
 
+import lombok.Data;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
+
+@Data
+@Entity
 public class OrderInfo {
-    private Long orderId;
-    private Long productId;
-    private String productName;
-    private BigDecimal unitPrice;
-    private int quantity;
-    private BigDecimal subtotalAmount;
+    @Id
+    private Long id;
+    private Long userId;
+    private BigDecimal totalAmount;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
+    private LocalDateTime createdTime;
+    private LocalDateTime updatedTime;
+    private LocalDateTime payTime;
+    private LocalDateTime shippingTime;
+    private LocalDateTime completionTime;
 
-    public OrderInfo(Long orderId, Long productId, String productName, BigDecimal unitPrice, int quantity,
-            BigDecimal subtotalAmount) {
-        this.orderId = orderId;
-        this.productId = productId;
-        this.productName = productName;
-        this.quantity = quantity;
-        this.subtotalAmount = subtotalAmount;
-        this.unitPrice = unitPrice;
-    }
+    public OrderInfo(){}
 
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public BigDecimal getUnitPrice() {
-        return unitPrice;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public BigDecimal getSubtotalAmount() {
-        return subtotalAmount;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
-
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public void setUnitPrice(BigDecimal unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public void setSubtotalAmount(BigDecimal subtotalAmount) {
-        this.subtotalAmount = subtotalAmount;
+    public OrderInfo(Long id, Long userId, BigDecimal totalAmount, OrderStatus status, LocalDateTime createdTime,
+        LocalDateTime updatedTime,LocalDateTime payTime,LocalDateTime shippingTime,LocalDateTime completionTime) {
+        this.id = id;
+        this.userId = userId;
+        this.totalAmount = totalAmount;
+        this.status = status;
+        this.createdTime = createdTime;
+        this.updatedTime = updatedTime;
+        this.payTime = payTime;
+        this.shippingTime = shippingTime;
+        this.completionTime = completionTime;
     }
 }
+
+    
